@@ -3,21 +3,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:travel_wish/constants/appconstants.dart';
 import 'package:travel_wish/ui%20helper/commobutton.dart';
 import 'package:travel_wish/ui%20helper/textbox.dart';
-import 'package:travel_wish/ui/screens/passwordreset.dart';
+import 'package:travel_wish/ui/pages/passwordreset.dart';
 import 'package:travel_wish/ui/screens/registerscreen.dart';
 
-class Loginscreen extends StatefulWidget {
+class Loginscreen extends StatelessWidget {
   const Loginscreen({super.key});
 
   @override
-  State<Loginscreen> createState() => _LoginscreenState();
-}
-
-class _LoginscreenState extends State<Loginscreen> {
-  final email = TextEditingController();
-  final password = TextEditingController();
-  @override
   Widget build(BuildContext context) {
+    final email = TextEditingController();
+    final password = TextEditingController();
     return Scaffold(
       backgroundColor: Appconstants.backgroundcolor,
       appBar: AppBar(
@@ -46,6 +41,7 @@ class _LoginscreenState extends State<Loginscreen> {
                   icon: Icon(
                     Icons.visibility_sharp,
                     color: Appconstants.fieldhinttextcolor,
+                    size: 24.dg,
                   ),
                 ),
               ),

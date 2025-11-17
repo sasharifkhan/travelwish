@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pinput/pinput.dart';
 import 'package:travel_wish/constants/appconstants.dart';
 import 'package:travel_wish/ui%20helper/commobutton.dart';
-import 'package:travel_wish/ui%20helper/textbox.dart';
 import 'package:travel_wish/ui/screens/loginscreen.dart';
-import 'package:travel_wish/ui/screens/otpverifyscreen.dart';
+import 'package:travel_wish/ui/pages/newpasswordset.dart';
 
-class Passwordreset extends StatelessWidget {
-  const Passwordreset({super.key});
+class Otpverifyscreen extends StatelessWidget {
+  const Otpverifyscreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final email = TextEditingController();
+    final otp = TextEditingController();
+
     return Scaffold(
       backgroundColor: Appconstants.backgroundcolor,
       appBar: AppBar(
         centerTitle: true,
         iconTheme: IconThemeData(color: Appconstants.titletextcolor),
         title: Text(
-          "Forget Password",
+          "Verify Account",
           style: TextStyle(color: Appconstants.titletextcolor, fontSize: 18.sp),
         ),
         backgroundColor: Appconstants.backgroundcolor,
@@ -29,7 +30,7 @@ class Passwordreset extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              "Password Reset",
+              "Enter OTP",
               style: TextStyle(
                 color: Appconstants.titletextcolor,
                 fontSize: 24.sp,
@@ -37,7 +38,7 @@ class Passwordreset extends StatelessWidget {
             ),
             Appconstants.h20,
             Text(
-              "Enter the email linked to your account. We'll send instructions to reset your password.",
+              "Please check your inbox (and spam folder) for the one-time password sent to your registered email.",
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Appconstants.titletextcolor,
@@ -45,18 +46,35 @@ class Passwordreset extends StatelessWidget {
               ),
             ),
             Appconstants.h20,
-            Textbox(controller: email, hintext: "Email"),
+            Pinput(
+              enabled: true,
+              length: 4,
+              controller: otp,
+              showCursor: true,
+              keyboardType: TextInputType.numberWithOptions(),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                "Resend OTP",
+                style: TextStyle(
+                  color: Appconstants.fieldhinttextcolor,
+                  fontSize: 14.sp,
+                ),
+              ),
+            ),
             Appconstants.h50,
             Commobutton(
-              buttontext: "Send Reset Link",
+              buttontext: "Verify",
               callback: () {
+                // print(otp.text);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Otpverifyscreen()),
+                  MaterialPageRoute(builder: (context) => Newpasswordset()),
                 );
               },
             ),
-            Spacer(),
+            Appconstants.h150,
             TextButton(
               onPressed: () {
                 Navigator.push(

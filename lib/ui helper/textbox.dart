@@ -6,12 +6,14 @@ class Textbox extends StatelessWidget {
   final TextEditingController controller;
   final String hintext;
   final IconButton? suffixIcon;
+  final IconButton? prefixIcon;
 
   const Textbox({
     super.key,
     required this.controller,
     required this.hintext,
     this.suffixIcon,
+    this.prefixIcon,
   });
 
   @override
@@ -23,6 +25,7 @@ class Textbox extends StatelessWidget {
       cursorColor: Appconstants.titletextcolor,
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
+        prefixIcon: prefixIcon,
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(width: 0),
           borderRadius: BorderRadius.circular(12.r),
@@ -31,7 +34,7 @@ class Textbox extends StatelessWidget {
           borderSide: BorderSide(width: 0),
           borderRadius: BorderRadius.circular(12.r),
         ),
-        fillColor: Color(0xFF243647),
+        fillColor: Appconstants.fieldfillcolor,
         filled: true,
         hint: Text(
           hintext,

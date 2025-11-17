@@ -4,14 +4,9 @@ import 'package:travel_wish/constants/appconstants.dart';
 import 'package:travel_wish/ui%20helper/commobutton.dart';
 import 'package:travel_wish/ui%20helper/textbox.dart';
 
-class Registerscreen extends StatefulWidget {
+class Registerscreen extends StatelessWidget {
   const Registerscreen({super.key});
 
-  @override
-  State<Registerscreen> createState() => _RegisterscreenState();
-}
-
-class _RegisterscreenState extends State<Registerscreen> {
   @override
   Widget build(BuildContext context) {
     bool checkbox = false;

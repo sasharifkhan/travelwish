@@ -3,38 +3,33 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:travel_wish/constants/appconstants.dart';
 import 'package:travel_wish/ui%20helper/commobutton.dart';
 import 'package:travel_wish/ui%20helper/textbox.dart';
-import 'package:travel_wish/ui/screens/loginscreen.dart';
+import 'package:travel_wish/ui/screens/homescreen.dart';
 
-class Otpverifyscreen extends StatefulWidget {
-  const Otpverifyscreen({super.key});
+class Newpasswordset extends StatelessWidget {
+  const Newpasswordset({super.key});
 
-  @override
-  State<Otpverifyscreen> createState() => _OtpverifyscreenState();
-}
-
-class _OtpverifyscreenState extends State<Otpverifyscreen> {
   @override
   Widget build(BuildContext context) {
-    final otp = TextEditingController();
-
+    final newpassword = TextEditingController();
+    final confirmnewpassword = TextEditingController();
     return Scaffold(
-      backgroundColor: Appconstants.backgroundcolor,
       appBar: AppBar(
         centerTitle: true,
         iconTheme: IconThemeData(color: Appconstants.titletextcolor),
         title: Text(
-          "Verify Account",
+          "New Password",
           style: TextStyle(color: Appconstants.titletextcolor, fontSize: 18.sp),
         ),
         backgroundColor: Appconstants.backgroundcolor,
       ),
+      backgroundColor: Appconstants.backgroundcolor,
       body: Padding(
         padding: EdgeInsets.all(15.dg),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              "Enter OTP",
+              "Create New Password",
               style: TextStyle(
                 color: Appconstants.titletextcolor,
                 fontSize: 24.sp,
@@ -42,7 +37,7 @@ class _OtpverifyscreenState extends State<Otpverifyscreen> {
             ),
             Appconstants.h20,
             Text(
-              "Please check your inbox (and spam folder) for the one-time password sent to your registered email.",
+              "Your new password must be at least 8 characters long and include a mix of letters, numbers, and symbols.",
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Appconstants.titletextcolor,
@@ -50,42 +45,40 @@ class _OtpverifyscreenState extends State<Otpverifyscreen> {
               ),
             ),
             Appconstants.h20,
-            Textbox(controller: otp, hintext: "Otp"),
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                "Resend OTP",
-                style: TextStyle(
+            Textbox(
+              controller: newpassword,
+              hintext: "New  Password",
+              suffixIcon: IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.visibility_sharp,
                   color: Appconstants.fieldhinttextcolor,
-                  fontSize: 14.sp,
+                  size: 24.dg,
+                ),
+              ),
+            ),
+            Appconstants.h20,
+            Textbox(
+              controller: confirmnewpassword,
+              hintext: "Confirm  New Password",
+              suffixIcon: IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.visibility_sharp,
+                  color: Appconstants.fieldhinttextcolor,
+                  size: 24.dg,
                 ),
               ),
             ),
             Appconstants.h50,
             Commobutton(
-              buttontext: "Verify",
+              buttontext: "Save",
               callback: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Otpverifyscreen()),
+                  MaterialPageRoute(builder: (context) => Homescreen()),
                 );
               },
-            ),
-            Appconstants.h150,
-            TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Loginscreen()),
-                );
-              },
-              child: Text(
-                "Back to Login",
-                style: TextStyle(
-                  color: Appconstants.fieldhinttextcolor,
-                  fontSize: 14.sp,
-                ),
-              ),
             ),
           ],
         ),
