@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:travel_wish/constants/appconstants.dart';
 import 'package:travel_wish/ui%20helper/textbox.dart';
+import 'package:travel_wish/ui/pages/desdetailsscreen.dart';
 
 class Explorepage extends StatefulWidget {
   const Explorepage({super.key});
@@ -12,6 +13,20 @@ class Explorepage extends StatefulWidget {
 
 class _ExplorepageState extends State<Explorepage> {
   final search = TextEditingController();
+
+  List<Map<String, String>> imagelist = [
+    {"image": "assets/images/image1.png"},
+    {"image": "assets/images/image6.png"},
+    {"image": "assets/images/image7.png"},
+    {"image": "assets/images/image8.png"},
+    {"image": "assets/images/image9.png"},
+    {"image": "assets/images/image10.png"},
+    {"image": "assets/images/image11.png"},
+    {"image": "assets/images/image12.png"},
+    {"image": "assets/images/image13.png"},
+    {"image": "assets/images/image14.png"},
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -139,6 +154,37 @@ class _ExplorepageState extends State<Explorepage> {
                   ],
                 ),
               ],
+            ),
+          ),
+          Appconstants.h10,
+          Expanded(
+            child: GridView.builder(
+              scrollDirection: Axis.vertical,
+              itemCount: imagelist.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                mainAxisExtent: 230.dg,
+                crossAxisSpacing: 10.dg,
+                mainAxisSpacing: 10.dg,
+                crossAxisCount: 2,
+              ),
+              itemBuilder: (context, index) {
+                return InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Desdetailsscreen(),
+                      ),
+                    );
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadiusGeometry.circular(8.dg),
+                    child: Image(
+                      image: AssetImage("${imagelist[index]['image']}"),
+                    ),
+                  ),
+                );
+              },
             ),
           ),
         ],

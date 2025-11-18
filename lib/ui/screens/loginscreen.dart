@@ -1,14 +1,21 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:travel_wish/constants/appconstants.dart';
 import 'package:travel_wish/ui%20helper/commobutton.dart';
 import 'package:travel_wish/ui%20helper/textbox.dart';
 import 'package:travel_wish/ui/pages/passwordreset.dart';
+import 'package:travel_wish/ui/screens/homescreen.dart';
 import 'package:travel_wish/ui/screens/registerscreen.dart';
 
-class Loginscreen extends StatelessWidget {
+class Loginscreen extends StatefulWidget {
   const Loginscreen({super.key});
 
+  @override
+  State<Loginscreen> createState() => _LoginscreenState();
+}
+
+class _LoginscreenState extends State<Loginscreen> {
   @override
   Widget build(BuildContext context) {
     final email = TextEditingController();
@@ -66,21 +73,41 @@ class Loginscreen extends StatelessWidget {
               Commobutton(
                 buttontext: "Login",
                 callback: () {
-                  Navigator.push(
+                  Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => Registerscreen()),
+                    MaterialPageRoute(builder: (context) => Homescreen()),
+                    (route) => false,
                   );
                 },
               ),
               Spacer(),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Don't have an account? Register",
-                  style: TextStyle(
-                    color: Appconstants.fieldhinttextcolor,
-                    fontSize: 16.sp,
-                  ),
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Don't have an account? ",
+                      style: TextStyle(
+                        fontSize: 16.sp,
+                        color: Appconstants.fieldhinttextcolor,
+                      ),
+                    ),
+                    TextSpan(
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Registerscreen(),
+                            ),
+                          );
+                        },
+                      text: "Register",
+                      style: TextStyle(
+                        color: Appconstants.fieldhinttextcolor,
+                        fontSize: 16.sp,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],

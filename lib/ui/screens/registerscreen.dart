@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:travel_wish/constants/appconstants.dart';
 import 'package:travel_wish/ui%20helper/commobutton.dart';
 import 'package:travel_wish/ui%20helper/textbox.dart';
+import 'package:travel_wish/ui/screens/homescreen.dart';
 
 class Registerscreen extends StatelessWidget {
   const Registerscreen({super.key});
@@ -101,7 +102,16 @@ class Registerscreen extends StatelessWidget {
                   ],
                 ),
                 Appconstants.h50,
-                Commobutton(buttontext: "Sign Up", callback: () {}),
+                Commobutton(
+                  buttontext: "Sign Up",
+                  callback: () {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (context) => Homescreen()),
+                      (route) => false,
+                    );
+                  },
+                ),
                 Appconstants.h10,
                 Center(
                   child: RichText(
