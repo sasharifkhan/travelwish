@@ -75,9 +75,10 @@ class Newpasswordset extends StatelessWidget {
               bgcolor: Appconstants.buttonbgcolor,
               buttontext: "Save",
               callback: () {
-                Navigator.push(
+                Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(builder: (context) => Homescreen()),
+                  (route) => false,
                 );
               },
             ),

@@ -36,6 +36,8 @@ class _HomescreenState extends State<Homescreen> {
           selectedItemColor: Appconstants.titletextcolor,
           unselectedItemColor: Appconstants.fieldhinttextcolor,
           iconSize: 24.dg,
+          selectedLabelStyle: TextStyle(fontSize: 16.sp),
+          unselectedLabelStyle: TextStyle(fontSize: 14.sp),
           items: [
             BottomNavigationBarItem(label: "Explore", icon: Icon(Icons.search)),
             BottomNavigationBarItem(

@@ -76,7 +76,7 @@ class _ExplorepageState extends State<Explorepage> {
                       ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                          minimumSize: Size(0, 38.dg),
+                          minimumSize: Size(0, 38.h),
                           backgroundColor: Appconstants.fieldfillcolor,
                           shape: ContinuousRectangleBorder(
                             borderRadius: BorderRadiusGeometry.circular(8.r),
@@ -95,7 +95,7 @@ class _ExplorepageState extends State<Explorepage> {
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Appconstants.fieldfillcolor,
-                          minimumSize: Size(0, 38.dg),
+                          minimumSize: Size(0, 38.h),
                           shape: ContinuousRectangleBorder(
                             borderRadius: BorderRadiusGeometry.circular(8.r),
                           ),
@@ -113,7 +113,7 @@ class _ExplorepageState extends State<Explorepage> {
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Appconstants.fieldfillcolor,
-                          minimumSize: Size(0, 38.dg),
+                          minimumSize: Size(0, 38.h),
                           shape: ContinuousRectangleBorder(
                             borderRadius: BorderRadiusGeometry.circular(8.r),
                           ),
@@ -131,7 +131,7 @@ class _ExplorepageState extends State<Explorepage> {
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Appconstants.fieldfillcolor,
-                          minimumSize: Size(0, 38.dg),
+                          minimumSize: Size(0, 38.h),
                           shape: ContinuousRectangleBorder(
                             borderRadius: BorderRadiusGeometry.circular(8.r),
                           ),
@@ -149,7 +149,7 @@ class _ExplorepageState extends State<Explorepage> {
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Appconstants.fieldfillcolor,
-                          minimumSize: Size(0, 38.dg),
+                          minimumSize: Size(0, 38.h),
                           shape: ContinuousRectangleBorder(
                             borderRadius: BorderRadiusGeometry.circular(8.r),
                           ),

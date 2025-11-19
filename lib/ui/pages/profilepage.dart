@@ -30,13 +30,13 @@ class Profilepage extends StatelessWidget {
                   // color: Appconstants.buttonbgcolor, //theme control
                   borderRadius: BorderRadius.circular(8.r),
                 ),
-                height: 220.dg,
+                height: 230.dg,
                 width: double.infinity,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     ClipRRect(
-                      borderRadius: BorderRadiusGeometry.circular(90),
+                      borderRadius: BorderRadiusGeometry.circular(9000),
                       child: Image(
                         image: AssetImage('assets/images/image11.png'),
                         height: 128.dg,
@@ -79,7 +79,7 @@ class Profilepage extends StatelessWidget {
                   // color: Appconstants.buttonbgcolor, //theme control
                   borderRadius: BorderRadius.circular(8.r),
                 ),
-                height: 95.dg,
+                height: 120.dg,
                 width: double.infinity,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -139,7 +139,7 @@ class Profilepage extends StatelessWidget {
                   // color: Appconstants.buttonbgcolor, //theme control
                   borderRadius: BorderRadius.circular(8.r),
                 ),
-                height: 137.dg,
+                height: 160.dg,
                 width: double.infinity,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -206,6 +206,7 @@ class Profilepage extends StatelessWidget {
                   ],
                 ),
               ),
+              Appconstants.h10,
               Commobutton(
                 buttontext: "Logout",
                 bgcolor: Appconstants.fieldfillcolor,

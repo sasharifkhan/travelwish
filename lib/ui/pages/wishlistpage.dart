@@ -37,34 +37,36 @@ class _FavoritepageState extends State<Wishlistpage> {
         builder: (_, provider, _) {
           List<Map<String, dynamic>> wishlist = provider.wishlisth;
           if (wishlist.isEmpty) {
-            return Padding(
-              padding: EdgeInsets.all(8.dg),
-              child: Column(
-                children: [
-                  Image(image: AssetImage("assets/images/emptybanner.png")),
-                  Appconstants.h20,
-                  Text(
-                    "Your wishlist is empty",
-                    style: TextStyle(
-                      fontSize: 18.sp,
-                      color: Appconstants.titletextcolor,
-                      fontWeight: FontWeight.bold,
+            return SingleChildScrollView(
+              child: Padding(
+                padding: EdgeInsets.all(8.dg),
+                child: Column(
+                  children: [
+                    Image(image: AssetImage("assets/images/emptybanner.png")),
+                    Appconstants.h20,
+                    Text(
+                      "Your wishlist is empty",
+                      style: TextStyle(
+                        fontSize: 18.sp,
+                        color: Appconstants.titletextcolor,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  Text(
-                    "Start exploring destinations to save them here!",
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      color: Appconstants.titletextcolor,
+                    Text(
+                      "Start exploring destinations to save them here!",
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        color: Appconstants.titletextcolor,
+                      ),
                     ),
-                  ),
-                  Appconstants.h20,
-                  Commobutton(
-                    buttontext: "Browse Destinations",
-                    callback: () {},
-                    bgcolor: Appconstants.fieldfillcolor,
-                  ),
-                ],
+                    Appconstants.h20,
+                    Commobutton(
+                      buttontext: "Browse Destinations",
+                      callback: () {},
+                      bgcolor: Appconstants.fieldfillcolor,
+                    ),
+                  ],
+                ),
               ),
             );
           }
