@@ -23,57 +23,60 @@ class Passwordreset extends StatelessWidget {
         ),
         backgroundColor: Appconstants.backgroundcolor,
       ),
-      body: Padding(
-        padding: EdgeInsets.all(15.dg),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              "Password Reset",
-              style: TextStyle(
-                color: Appconstants.titletextcolor,
-                fontSize: 24.sp,
-              ),
-            ),
-            Appconstants.h20,
-            Text(
-              "Enter the email linked to your account. We'll send instructions to reset your password.",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Appconstants.titletextcolor,
-                fontSize: 16.sp,
-              ),
-            ),
-            Appconstants.h20,
-            Textbox(controller: email, hintext: "Email"),
-            Appconstants.h50,
-            Commobutton(
-              bgcolor: Appconstants.buttonbgcolor,
-              buttontext: "Send Reset Link",
-              callback: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Otpverifyscreen()),
-                );
-              },
-            ),
-            Spacer(),
-            TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Loginscreen()),
-                );
-              },
-              child: Text(
-                "Back to Login",
-                style: TextStyle(
-                  color: Appconstants.fieldhinttextcolor,
-                  fontSize: 14.sp,
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.all(15.dg),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "Password Reset",
+                  style: TextStyle(
+                    color: Appconstants.titletextcolor,
+                    fontSize: 24.sp,
+                  ),
                 ),
-              ),
+                Appconstants.h20,
+                Text(
+                  "Enter the email linked to your account. We'll send instructions to reset your password.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Appconstants.titletextcolor,
+                    fontSize: 16.sp,
+                  ),
+                ),
+                Appconstants.h20,
+                Textbox(controller: email, hintext: "Email"),
+                Appconstants.h50,
+                Commobutton(
+                  bgcolor: Appconstants.buttonbgcolor,
+                  buttontext: "Send Reset Link",
+                  callback: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Otpverifyscreen(),
+                      ),
+                    );
+                  },
+                ),
+                Appconstants.h150,
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    "Back to Login",
+                    style: TextStyle(
+                      color: Appconstants.fieldhinttextcolor,
+                      fontSize: 14.sp,
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

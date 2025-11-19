@@ -31,87 +31,89 @@ class _LoginscreenState extends State<Loginscreen> {
         ),
         backgroundColor: Appconstants.backgroundcolor,
       ),
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.all(15.dg),
-          child: Column(
-            children: [
-              Appconstants.h20,
-              Textbox(controller: email, hintext: "Email"),
-              Text(""),
-              Appconstants.h20,
-              Textbox(
-                controller: password,
-                hintext: "Password",
-                suffixIcon: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.visibility_sharp,
-                    color: Appconstants.fieldhinttextcolor,
-                    size: 24.dg,
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.all(15.dg),
+            child: Column(
+              children: [
+                Appconstants.h20,
+                Textbox(controller: email, hintext: "Email"),
+                Text(""),
+                Appconstants.h20,
+                Textbox(
+                  controller: password,
+                  hintext: "Password",
+                  suffixIcon: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.visibility_sharp,
+                      color: Appconstants.fieldhinttextcolor,
+                      size: 24.dg,
+                    ),
                   ),
                 ),
-              ),
-              Text(""),
-              Appconstants.h20,
-              TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Passwordreset()),
-                  );
-                },
-                child: Text(
-                  "Forgot Password?",
-                  style: TextStyle(
-                    color: Appconstants.fieldhinttextcolor,
-                    fontSize: 14.sp,
+                Text(""),
+                Appconstants.h20,
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Passwordreset()),
+                    );
+                  },
+                  child: Text(
+                    "Forgot Password?",
+                    style: TextStyle(
+                      color: Appconstants.fieldhinttextcolor,
+                      fontSize: 14.sp,
+                    ),
                   ),
                 ),
-              ),
-              Appconstants.h50,
-              Commobutton(
-                bgcolor: Appconstants.buttonbgcolor,
-                buttontext: "Login",
-                callback: () {
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(builder: (context) => Homescreen()),
-                    (route) => false,
-                  );
-                },
-              ),
-              Spacer(),
-              RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: "Don't have an account? ",
-                      style: TextStyle(
-                        fontSize: 16.sp,
-                        color: Appconstants.fieldhinttextcolor,
-                      ),
-                    ),
-                    TextSpan(
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Registerscreen(),
-                            ),
-                          );
-                        },
-                      text: "Register",
-                      style: TextStyle(
-                        color: Appconstants.fieldhinttextcolor,
-                        fontSize: 16.sp,
-                      ),
-                    ),
-                  ],
+                Appconstants.h50,
+                Commobutton(
+                  bgcolor: Appconstants.buttonbgcolor,
+                  buttontext: "Login",
+                  callback: () {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (context) => Homescreen()),
+                      (route) => false,
+                    );
+                  },
                 ),
-              ),
-            ],
+                Appconstants.h150,
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "Don't have an account? ",
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          color: Appconstants.fieldhinttextcolor,
+                        ),
+                      ),
+                      TextSpan(
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Registerscreen(),
+                              ),
+                            );
+                          },
+                        text: "Register",
+                        style: TextStyle(
+                          color: Appconstants.fieldhinttextcolor,
+                          fontSize: 16.sp,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
