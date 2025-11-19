@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:travel_wish/constants/appconstants.dart';
 import 'package:travel_wish/ui%20helper/commobutton.dart';
 import 'package:travel_wish/ui%20helper/textbox.dart';
-import 'package:travel_wish/ui/screens/loginscreen.dart';
 import 'package:travel_wish/ui/pages/otpverifyscreen.dart';
 
 class Passwordreset extends StatelessWidget {
