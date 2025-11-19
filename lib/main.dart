@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import 'package:travel_wish/services/providers/wishProvider.dart';
 import 'package:travel_wish/ui/pages/onboardingscreen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (context) => Wishprovider(),)
+  ],child: MyApp(),));
 }
 
 class MyApp extends StatelessWidget {

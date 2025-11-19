@@ -65,6 +65,7 @@ class Otpverifyscreen extends StatelessWidget {
             ),
             Appconstants.h50,
             Commobutton(
+              bgcolor: Appconstants.buttonbgcolor,
               buttontext: "Verify",
               callback: () {
                 // print(otp.text);

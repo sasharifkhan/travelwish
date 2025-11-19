@@ -5,10 +5,12 @@ import 'package:travel_wish/constants/appconstants.dart';
 class Commobutton extends StatelessWidget {
   final String buttontext;
   final VoidCallback callback;
+  final Color bgcolor;
   const Commobutton({
     super.key,
     required this.buttontext,
     required this.callback,
+    required this.bgcolor,
   });
 
   @override
@@ -18,11 +20,11 @@ class Commobutton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: callback,
         style: ElevatedButton.styleFrom(
-          minimumSize: Size(double.infinity, 48.h),
+          minimumSize: Size(double.infinity, 40.dg),
           shape: ContinuousRectangleBorder(
             borderRadius: BorderRadiusGeometry.circular(15.r),
           ),
-          backgroundColor: Appconstants.buttonbgcolor,
+          backgroundColor: bgcolor,
         ),
         child: Text(
           buttontext,

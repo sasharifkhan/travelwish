@@ -48,6 +48,7 @@ class Passwordreset extends StatelessWidget {
             Textbox(controller: email, hintext: "Email"),
             Appconstants.h50,
             Commobutton(
+              bgcolor: Appconstants.buttonbgcolor,
               buttontext: "Send Reset Link",
               callback: () {
                 Navigator.push(

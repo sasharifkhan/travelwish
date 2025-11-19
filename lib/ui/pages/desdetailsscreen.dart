@@ -3,9 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:travel_wish/constants/appconstants.dart';
 
-class Desdetailsscreen extends StatelessWidget {
-  const Desdetailsscreen({super.key});
+class Desdetailsscreen extends StatefulWidget {
+  const Desdetailsscreen(Map<String, dynamic> explorelist, {super.key});
 
+  @override
+  State<Desdetailsscreen> createState() => _DesdetailsscreenState();
+}
+
+class _DesdetailsscreenState extends State<Desdetailsscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,16 +26,16 @@ class Desdetailsscreen extends StatelessWidget {
                     width: double.infinity,
                     fit: BoxFit.cover,
                   ),
-                  Image(
-                    image: AssetImage("assets/images/image1.png"),
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                  Image(
-                    image: AssetImage("assets/images/image6.png"),
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
+                  // Image(
+                  //   image: AssetImage("assets/images/image1.png"),
+                  //   width: double.infinity,
+                  //   fit: BoxFit.cover,
+                  // ),
+                  // Image(
+                  //   image: AssetImage("assets/images/image6.png"),
+                  //   width: double.infinity,
+                  //   fit: BoxFit.cover,
+                  // ),
                 ],
                 options: CarouselOptions(
                   pauseAutoPlayOnManualNavigate: true,

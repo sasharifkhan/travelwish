@@ -39,6 +39,7 @@ class Onboardingscreen extends StatelessWidget {
                     ),
                     Appconstants.h100,
                     Commobutton(
+                      bgcolor: Appconstants.buttonbgcolor,
                       buttontext: "Get Started",
                       callback: () {
                         Navigator.push(

@@ -103,6 +103,7 @@ class Registerscreen extends StatelessWidget {
                 ),
                 Appconstants.h50,
                 Commobutton(
+                  bgcolor: Appconstants.buttonbgcolor,
                   buttontext: "Sign Up",
                   callback: () {
                     Navigator.pushAndRemoveUntil(

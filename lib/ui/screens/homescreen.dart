@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:travel_wish/constants/appconstants.dart';
 import 'package:travel_wish/ui/pages/explorepage.dart';
+import 'package:travel_wish/ui/pages/profilepage.dart';
+import 'package:travel_wish/ui/pages/wishlistpage.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -15,44 +17,10 @@ class _HomescreenState extends State<Homescreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 50.dg,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.search, size: 24.dg),
-          ),
-        ],
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.settings, size: 24.dg),
-        ),
-        centerTitle: true,
-        iconTheme: IconThemeData(color: Appconstants.titletextcolor),
-        title: Text(
-          "TravelWish",
-          style: TextStyle(color: Appconstants.titletextcolor, fontSize: 18.sp),
-        ),
-        backgroundColor: Appconstants.backgroundcolor,
-      ),
       backgroundColor: Appconstants.backgroundcolor,
       body: IndexedStack(
         index: selectedindex,
-        children: [
-          Explorepage(),
-          Center(
-            child: Text(
-              "Empty Wishlist",
-              style: TextStyle(color: Appconstants.titletextcolor),
-            ),
-          ),
-          Center(
-            child: Text(
-              "Empty Profile",
-              style: TextStyle(color: Appconstants.titletextcolor),
-            ),
-          ),
-        ],
+        children: [Explorepage(), Wishlistpage(), Profilepage()],
       ),
       bottomNavigationBar: SizedBox(
         height: 80.dg,

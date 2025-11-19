@@ -72,6 +72,7 @@ class Newpasswordset extends StatelessWidget {
             ),
             Appconstants.h50,
             Commobutton(
+              bgcolor: Appconstants.buttonbgcolor,
               buttontext: "Save",
               callback: () {
                 Navigator.push(

@@ -71,6 +71,7 @@ class _LoginscreenState extends State<Loginscreen> {
               ),
               Appconstants.h50,
               Commobutton(
+                bgcolor: Appconstants.buttonbgcolor,
                 buttontext: "Login",
                 callback: () {
                   Navigator.pushAndRemoveUntil(
