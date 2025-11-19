@@ -18,9 +18,12 @@ class Wishprovider extends ChangeNotifier {
   final List<Map<String, dynamic>> _wishlist = [];
   get wishlisth => _wishlist;
 
-  // togglewishlist(int index) {
-  //   if (_wishlist.contains(index)) {
-  //     _wishlist.remove(index);
-  //   } else {}
-  // }
+  togglewishlist(Map<String, dynamic> explorelist) {
+    if (_wishlist.contains(explorelist)) {
+      _wishlist.remove(explorelist);
+    } else {
+      _wishlist.add(explorelist);
+    }
+    notifyListeners();
+  }
 }

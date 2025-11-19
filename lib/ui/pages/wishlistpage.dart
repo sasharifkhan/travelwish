@@ -72,47 +72,53 @@ class _FavoritepageState extends State<Wishlistpage> {
             padding: EdgeInsets.only(left: 10.w, right: 10.w),
             scrollDirection: Axis.vertical,
             itemCount: wishlist.length,
-            itemBuilder: (context, index) => Container(
-              height: 60.dg,
-              decoration: BoxDecoration(
-                color: Appconstants.buttonbgcolor,
-                borderRadius: BorderRadius.circular(8.r),
-              ),
-              child: ListTile(
-                onTap: () {},
-                leading: ClipRRect(
-                  borderRadius: BorderRadiusGeometry.circular(8.dg),
-                  child: Image(
-                    image: AssetImage("assets/images/image8.png"),
-                    height: 56.dg,
-                    width: 65.dg,
-                    fit: BoxFit.cover,
-                  ),
+            itemBuilder: (context, index) => Dismissible(
+              key: Key(wishlist[index].toString()),
+              onDismissed: (direction) {
+                provider.togglewishlist(wishlist[index]);
+              },
+              child: Container(
+                height: 60.dg,
+                decoration: BoxDecoration(
+                  // color: Appconstants.buttonbgcolor, // Theme control
+                  borderRadius: BorderRadius.circular(8.r),
                 ),
-                title: Text(
-                  "Paris",
-                  style: TextStyle(
-                    color: Appconstants.titletextcolor,
-                    fontSize: 16.sp,
+                child: ListTile(
+                  onTap: () {},
+                  leading: ClipRRect(
+                    borderRadius: BorderRadiusGeometry.circular(8.dg),
+                    child: Image(
+                      image: AssetImage("${wishlist[index]['image']}"),
+                      height: 56.dg,
+                      width: 65.dg,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                ),
-                subtitle: Text(
-                  "France",
-                  style: TextStyle(
-                    color: Appconstants.fieldhinttextcolor,
-                    fontSize: 14.sp,
-                  ),
-                ),
-                trailing: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Appconstants.fieldfillcolor,
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    "Plan Trip",
+                  title: Text(
+                    "Paris",
                     style: TextStyle(
                       color: Appconstants.titletextcolor,
+                      fontSize: 16.sp,
+                    ),
+                  ),
+                  subtitle: Text(
+                    "France",
+                    style: TextStyle(
+                      color: Appconstants.fieldhinttextcolor,
                       fontSize: 14.sp,
+                    ),
+                  ),
+                  trailing: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Appconstants.fieldfillcolor,
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      "Plan Trip",
+                      style: TextStyle(
+                        color: Appconstants.titletextcolor,
+                        fontSize: 14.sp,
+                      ),
                     ),
                   ),
                 ),

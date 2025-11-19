@@ -1,10 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:travel_wish/constants/appconstants.dart';
+import 'package:travel_wish/services/providers/wishProvider.dart';
 
 class Desdetailsscreen extends StatefulWidget {
-  const Desdetailsscreen(Map<String, dynamic> explorelist, {super.key});
+  final Map<String, dynamic> explorelist;
+  const Desdetailsscreen({super.key, required this.explorelist});
 
   @override
   State<Desdetailsscreen> createState() => _DesdetailsscreenState();
@@ -22,7 +25,7 @@ class _DesdetailsscreenState extends State<Desdetailsscreen> {
               CarouselSlider(
                 items: [
                   Image(
-                    image: AssetImage("assets/images/productbanner1.png"),
+                    image: AssetImage("${widget.explorelist['image']}"),
                     width: double.infinity,
                     fit: BoxFit.cover,
                   ),
@@ -64,13 +67,23 @@ class _DesdetailsscreenState extends State<Desdetailsscreen> {
                             color: Appconstants.titletextcolor,
                           ),
                         ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.favorite_outline,
-                            size: 24.dg,
-                            color: Appconstants.titletextcolor,
-                          ),
+                        Consumer<Wishprovider>(
+                          builder: (_, provider, _) {
+                            List<Map<String, dynamic>> wishlist =
+                                provider.wishlisth;
+                            return IconButton(
+                              onPressed: () {
+                                provider.togglewishlist(widget.explorelist);
+                              },
+                              icon: Icon(
+                                wishlist.contains(widget.explorelist)
+                                    ? Icons.favorite
+                                    : Icons.favorite_outline,
+                                size: 24.dg,
+                                color: Appconstants.titletextcolor,
+                              ),
+                            );
+                          },
                         ),
                       ],
                     ),

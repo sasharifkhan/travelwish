@@ -188,7 +188,9 @@ class _ExplorepageState extends State<Explorepage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Desdetailsscreen(explorelist[index]),
+                              builder: (context) => Desdetailsscreen(
+                                explorelist: explorelist[index],
+                              ),
                             ),
                           );
                         },
